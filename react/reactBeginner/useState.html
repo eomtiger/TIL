@@ -12,8 +12,12 @@
   
   function Container() {
     const [counter, setCounter] = React.useState(0);
+    //useState의 arguement 0이 counter 값으로 할당
+    //useState의 modifer 함수가 setCounter에 할당
     const onClick = () => {
       setCounter((current) => current + 1)
+      //current는 최근 상태의 counter값이고
+      //setCounter라는 modifier함수가 동작하면 component가 재실행
     };
     return(
       <div>
