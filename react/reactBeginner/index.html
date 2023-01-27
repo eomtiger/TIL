@@ -10,11 +10,8 @@
 <script type="text/babel">
   const root = document.getElementById('root');
   
-  function Container() {
-    const [counter, setCounter] = React.useState(0);
-    const onClick = () => {
-      setCounter((current) => current + 1)
-    };
+  function App() {
+    
     return(
       <div>
         <h3>Total clicks: {counter}</h3>
