@@ -1,0 +1,9 @@
+how to use useEffect
+
+useEffect(()=>{
+	함수
+}, [])
+
+두 번째 인자의 내용이 바뀌면 useEffect 안의 함수 실행
+
+두번째 인자가 없으면 처음 렌더링(마운트)될 때만 실행
