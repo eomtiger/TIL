@@ -1,0 +1,7 @@
+const [a, setA] = useState('')
+
+const eventHandler(()=>{
+	setA('a')
+})
+
+a의 상태를 변화시킬 수 있음
