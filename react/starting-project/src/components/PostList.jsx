@@ -1,27 +1,19 @@
 import { useState } from "react";
 import NewPost from "./NewPost.jsx";
 import Post from "./Post.jsx";
+import Modal from "./Modal.jsx";
 import classes from "./PostList.module.css";
 
-function PostList() {
-  const [enteredBody, setEnteredBody] = useState("");
-  const [enteredAuthor, setEnteredAuthor] = useState("");
-
-  function bodyChangeHandler(event) {
-    setEnteredBody(event.target.value);
-  }
-  function authorChangeHandler(event) {
-    setEnteredAuthor(event.target.value);
-  }
-
+function PostList({ isPosting, onStopPosting }) {
   return (
     <>
-      <NewPost
-        onBodyChange={bodyChangeHandler}
-        onAuthorChange={authorChangeHandler}
-      />
+      {isPosting ? (
+        <Modal onClose={onStopPosting}>
+          <NewPost onCancel={onStopPosting} />
+        </Modal>
+      ) : null}
+
       <ul className={classes.posts}>
-        <Post author={enteredAuthor} body={enteredBody} />
         <Post author="승디" body="asdfsdaf" />
       </ul>
     </>
